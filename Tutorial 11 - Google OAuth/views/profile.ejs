@@ -1,0 +1,70 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body 		{ padding-top:80px; word-wrap:break-word; }
+	</style>
+</head>
+<body>
+<div class="container">
+
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
+
+	<div class="row">
+
+		<!-- LOCAL INFORMATION -->
+		<div class="col-sm-6">
+			<div class="well">
+				<h3><span class="fa fa-user"></span> Local</h3>
+
+					<p>
+						<strong>id</strong>: <%= user._id %><br>
+						<strong>email</strong>: <%= user.local.username %><br>
+						<strong>password</strong>: <%= user.local.password %>
+					</p>
+
+			</div>
+		</div>
+
+		 <!-- FACEBOOK INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+
+                <p>
+                    <strong>id</strong>: <%= user.facebook.id %><br>
+                    <strong>token</strong>: <%= user.facebook.token %><br>
+                    <strong>email</strong>: <%= user.facebook.email %><br>
+                    <strong>name</strong>: <%= user.facebook.name %>
+                </p>
+
+            </div>
+        </div>
+
+        <!-- GOOGLE INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+
+                <p>
+                    <strong>id</strong>: <%= user.google.id %><br>
+                    <strong>token</strong>: <%= user.google.token %><br>
+                    <strong>email</strong>: <%= user.google.email %><br>
+                    <strong>name</strong>: <%= user.google.name %>
+                </p>
+
+            </div>
+        </div>
+
+	</div>
+
+</div>
+</body>
+</html>
