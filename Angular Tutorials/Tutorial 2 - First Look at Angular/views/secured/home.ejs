@@ -1,0 +1,26 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html ng-app>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header text-center">
+            <h1><span class="fa fa-anchor"></span> Our First Angular App </h1>
+            <input type="email" name="name" ng-model="name">
+            <br><br><br>
+            <div class="alert alert-{{name}}" role="alert">Hello World</div>
+            {{ name }}
+        </div>
+    </div>
+    <script src="libs/angularjs/angular.js"></script>
+</body>
+</html>
