@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Youtube Tutorial Series Application">
+    <meta name="author" content="Brent Aureli">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Youtube Tutorial Series Application</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="navController">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">BrentAureli.com</a>
+        </div>
+        <div id="navbar" class="navbar-collapse" collapse="isCollapsed">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{active: isActive('/dailydose')}"><a href="/dailydose">Daily Dose</a></li>
+            <li ng-class="{active: isActive('/profile')}"><a href="/profile">Profile</a></li>
+            <li ng-class="{active: isActive('/submit')}"><a href="/submit">Submit</a></li>
+            <li><a href="/auth/logout" target="_self">Logout</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action  -->
+      <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+      </div>
+
+      <div ng-view></div>
+
+    </div> <!-- /container -->
+
+    <!-- Angular core components -->
+    <script src="libs/angularjs/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    
+    <!-- Initialize Angular App -->
+    <script src="js/app.js"></script>
+
+    <!-- Angular Controllers -->
+    <script src="js/controllers/profileController.js"></script>
+    <script src="js/controllers/submitController.js"></script>
+    <script src="js/controllers/dailydoseController.js"></script>
+    <script src="js/controllers/navController.js"></script>
+
+  </body>
+</html>
